@@ -25,17 +25,17 @@ function GalleryItem({ item, getGalleryList }) {
 
   if (beenClicked === false) {
     return (
-      <>
+      <div className="galleryItem">
         <img src={item.path} onClick={showDescription}></img>
         <p>Likes: {item.likes}</p>
         <button onClick={handleLike} className="like-btn">
           Like
         </button>
-      </>
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="galleryItem">
         <p>{item.description}</p>
         <p>Likes: {item.likes}</p>
         <button onClick={handleLike} className="like-btn">
@@ -44,7 +44,7 @@ function GalleryItem({ item, getGalleryList }) {
         <button onClick={showImage} className="show-img-btn">
           Show Picture
         </button>
-      </>
+      </div>
     );
   }
 }

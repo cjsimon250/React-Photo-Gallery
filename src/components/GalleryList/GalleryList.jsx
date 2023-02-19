@@ -1,8 +1,9 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
+//list
 function GalleryList({ galleryItems, getGalleryList }) {
   return (
-    <>
+    <div id="galleryList">
       {galleryItems.map((item) => {
         return (
           <div key={item.id}>
@@ -10,7 +11,7 @@ function GalleryList({ galleryItems, getGalleryList }) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }
 

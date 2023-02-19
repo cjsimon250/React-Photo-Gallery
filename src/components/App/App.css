@@ -13,3 +13,16 @@
   font-size: 1.5em;
 }
 
+#galleryList {
+  display: flex;
+  gap: 10%;
+  width: 80%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+/* .galleryItem {
+  height: 40%;
+  width: 40%;
+  padding: 10%;
+} */
