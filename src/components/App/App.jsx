@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
 import GalleryForm from "../GalleryForm/GalleryForm";
+import GalleryList from "../GalleryList/GalleryList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  let [galleryList, setGalleryList] = useState([]);
+  let [galleryItems, setGalleryItems] = useState([]);
 
   //on load, get gallery
   useEffect(() => {
@@ -16,8 +17,8 @@ function App() {
     axios
       .get("/gallery")
       .then((response) => {
-        setGalleryList(response.data);
-        console.log(galleryList);
+        setGalleryItems(response.data);
+        console.log(galleryItems);
       })
       .catch((error) => {
         alert("error in get GalleryList");
@@ -31,6 +32,7 @@ function App() {
         <h1 className="App-title">Gallery of My Life</h1>
       </header>
       <GalleryForm />
+      <GalleryList galleryItems={galleryItems} />
       <p>Gallery goes here</p>
       <img src="images/goat_small.jpg" />
     </div>
