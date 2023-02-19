@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function GalleryItem({ item, getGalleryList }) {
   let [beenClicked, setBeenClicked] = useState(false);
@@ -9,12 +10,27 @@ function GalleryItem({ item, getGalleryList }) {
   function showImage() {
     setBeenClicked(false);
   }
+
+  function handleLike() {
+    const id = item.id;
+    axios
+      .put(`gallery/like/${id}`)
+      .then((response) => {
+        getGalleryList();
+      })
+      .catch((error) => {
+        console.log("error in handleLike:", error);
+      });
+  }
+
   if (beenClicked === false) {
     return (
       <>
         <img src={item.path} onClick={showDescription}></img>
-        <p>{item.description}</p>
         <p>Likes: {item.likes}</p>
+        <button onClick={handleLike} className="like-btn">
+          Like
+        </button>
       </>
     );
   } else {
@@ -22,7 +38,12 @@ function GalleryItem({ item, getGalleryList }) {
       <>
         <p>{item.description}</p>
         <p>Likes: {item.likes}</p>
-        <button onClick={showImage}>Show Picture</button>
+        <button onClick={handleLike} className="like-btn">
+          Like
+        </button>
+        <button onClick={showImage} className="show-img-btn">
+          Show Picture
+        </button>
       </>
     );
   }
