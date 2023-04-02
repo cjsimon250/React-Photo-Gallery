@@ -1,9 +1,9 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# React Photo Gallery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+With this project I was able to display photos on the DOM using react.js as well as give users the ability to like said photos as well as view the
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Technologies Used
+
+HTML5, CSS3, Javascript, react.js, and axios
